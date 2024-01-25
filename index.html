@@ -9,11 +9,12 @@
             display: flex;
             flex-direction: column;
             margin: 0;
+            color: #333; /* Default text color */
         }
 
         nav {
             width: 20%;
-            background: url('navbar.JPG') center/cover; /* Replace 'your-image-url.jpg' with the actual image URL */
+            background: url('images/your-image.jpg') center/cover;
             color: #fff;
             padding: 10px;
             box-sizing: border-box;
@@ -22,65 +23,69 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start; /* Align items to the left */
-            justify-content: flex-start; /* Adjusted to start from the top */
+            align-items: flex-start;
+            justify-content: flex-start;
         }
 
         ul {
-            list-style-type: none; /* Remove bullet points */
+            list-style-type: none;
             padding: 0;
-            width: 100%; /* Make the list full width */
+            width: 100%;
         }
 
         li {
-            margin-bottom: 5px; /* Reduce spacing between list items */
+            margin-bottom: 5px;
         }
 
         a {
-            text-decoration: none; /* Remove underline from links */
-            color: #fff; /* Set link color to white */
-            padding: 15px; /* Increased button size */
-            display: block; /* Make the link a block-level element for full width */
-            border: none; /* Remove the border */
-            background: none; /* Remove background */
-            cursor: pointer; /* Change cursor on hover */
-            transition: background-color 0.3s ease; /* Add a smooth transition */
-            width: calc(100% - 20px); /* Adjusted to ensure full width, considering padding */
-            text-align: left; /* Align text to the left within buttons */
+            text-decoration: none;
+            color: #fff;
+            padding: 15px;
+            display: block;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: calc(100% - 20px);
+            text-align: left;
         }
 
-        a:hover {
-            background-color: #555; /* Change background color on hover */
+        a:hover,
+        a:active { /* Added :active state for click effect */
+            background-color: #555;
         }
 
         section {
-            flex: 1; /* Fill available space */
+            flex: 1;
             padding: 20px;
             box-sizing: border-box;
-            margin-left: 20%; /* Adjusted margin-left to match the width of the nav */
-            min-height: 100vh; /* Set the minimum height to full screen height */
-            overflow-y: auto; /* Add vertical scroll if content overflows */
+            margin-left: 20%;
+            min-height: 100vh;
+            overflow-y: auto;
+            background-color: #f2f2f2; /* Light gray background */
+            color: #333; /* Dark gray text color */
+            position: relative;
         }
 
-        /* Each section with its own background color */
         #section1 {
-            background-color: #FFD700; /* Gold */
+            background-color: #d9d9d9; /* Medium gray */
         }
 
-        #section2 {
-            background-color: #87CEFA; /* Light Sky Blue */
+        #section1 img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70%;
         }
 
-        #section3 {
-            background-color: #333; /* Pale Green */
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            margin-top: auto; /* Push the footer to the bottom */
+        #section1 .text-box {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            color: #000;
         }
     </style>
 </head>
@@ -98,12 +103,15 @@
     </nav>
 
     <section id="section1">
-        <h2>About me</h2>
-        <p>
-            Hi, I'm Jeffrey – a Data Analyst and Web Developer passionate about turning data into insights and creating engaging web experiences.
-            With expertise in [mention specific tools or languages], I've successfully contributed to impactful projects, from unraveling data intricacies to crafting interactive web solutions.
-            Let's connect and explore the possibilities together!
-        </p>
+        <img src="images/your-profile-image.jpg" alt="Your Profile Image">
+        <div class="text-box">
+            <h2>About me</h2>
+            <p>
+                Hi, I'm Jeffrey – a Data Analyst and Web Developer passionate about turning data into insights and creating engaging web experiences.
+                With expertise in [mention specific tools or languages], I've successfully contributed to impactful projects, from unraveling data intricacies to crafting interactive web solutions.
+                Let's connect and explore the possibilities together!
+            </p>
+        </div>
     </section>
 
     <section id="section2">
