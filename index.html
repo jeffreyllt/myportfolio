@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
+    <title>My Portfolio</title>
     <style>
         body {
             display: flex;
@@ -13,25 +13,17 @@
 
         nav {
             width: 20%;
-            background-color: #333;
+            background: url('lib\images\navbar.JPG') center/cover; /* Replace 'your-image-url.jpg' with the actual image URL */
             color: #fff;
-            padding: 20px;
+            padding: 10px;
             box-sizing: border-box;
             position: fixed;
             height: 100vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items horizontally */
-            justify-content: space-between;
-        }
-
-        .icon {
-            width: 40px; /* Adjust the width of the circular icon */
-            height: 40px; /* Make it a square for a circular effect */
-            background-color: #fff; /* Icon background color */
-            border-radius: 50%; /* Make it circular */
-            margin-bottom: 20px; /* Add margin to separate from buttons */
+            align-items: flex-start; /* Align items to the left */
+            justify-content: flex-start; /* Adjusted to start from the top */
         }
 
         ul {
@@ -41,19 +33,19 @@
         }
 
         li {
-            margin-bottom: 10px; /* Add spacing between list items */
+            margin-bottom: 5px; /* Reduce spacing between list items */
         }
 
         a {
             text-decoration: none; /* Remove underline from links */
             color: #fff; /* Set link color to white */
-            padding: 15px; /* Make the buttons wider */
+            padding: 15px; /* Increased button size */
             display: block; /* Make the link a block-level element for full width */
             border: none; /* Remove the border */
             background: none; /* Remove background */
             cursor: pointer; /* Change cursor on hover */
             transition: background-color 0.3s ease; /* Add a smooth transition */
-            width: 100%; /* Make buttons full width */
+            width: calc(100% - 20px); /* Adjusted to ensure full width, considering padding */
             text-align: left; /* Align text to the left within buttons */
         }
 
@@ -62,10 +54,12 @@
         }
 
         section {
-            height: 100vh;
+            flex: 1; /* Fill available space */
             padding: 20px;
             box-sizing: border-box;
-            margin-left: 20%;
+            margin-left: 20%; /* Adjusted margin-left to match the width of the nav */
+            min-height: 100vh; /* Set the minimum height to full screen height */
+            overflow-y: auto; /* Add vertical scroll if content overflows */
         }
 
         /* Each section with its own background color */
@@ -78,7 +72,7 @@
         }
 
         #section3 {
-            background-color: #98FB98; /* Pale Green */
+            background-color: #333; /* Pale Green */
         }
 
         footer {
@@ -86,35 +80,39 @@
             color: #fff;
             padding: 10px;
             text-align: center;
+            margin-top: auto; /* Push the footer to the bottom */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="icon"></div>
         <ul>
-            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section1">About me</a></li>
             <li><a href="#section2">Section 2</a></li>
             <li><a href="#section3">Section 3</a></li>
         </ul>
         <footer>
-            <p>This is the footer content.</p>
+            <p>Jeffrey Lam @2024</p>
         </footer>
     </nav>
 
     <section id="section1">
-        <h2>Section 1</h2>
-        <p>This is the content of section 1.</p>
+        <h2>About me</h2>
+        <p>
+            Hi, I'm Jeffrey – a Data Analyst and Web Developer passionate about turning data into insights and creating engaging web experiences.
+            With expertise in [mention specific tools or languages], I've successfully contributed to impactful projects, from unraveling data intricacies to crafting interactive web solutions.
+            Let's connect and explore the possibilities together!
+        </p>
     </section>
 
     <section id="section2">
-        <h2>Section 2</h2>
+        <h2>Why Hire Me</h2>
         <p>This is the content of section 2.</p>
     </section>
 
     <section id="section3">
-        <h2>Section 3</h2>
+        <h2>Contact me</h2>
         <p>This is the content of section 3.</p>
     </section>
 
