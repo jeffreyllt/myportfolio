@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
             display: flex;
             flex-direction: column;
             margin: 0;
-            color: #333; /* Default text color */
+            color: #333;
+            font-family: 'Verdana', sans-serif; /* Set Verdana as the font family */
         }
 
         nav {
             width: 20%;
-            background-color: #444; /* Dark grey background */
+            background-color: #444;
             color: #fff;
             padding: 10px;
             box-sizing: border-box;
@@ -25,6 +27,11 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
+        }
+
+        #profile-pic {
+            width: 40%;
+            margin-bottom: 20px;
         }
 
         ul {
@@ -62,21 +69,23 @@
             margin-left: 20%;
             min-height: 100vh;
             overflow-y: auto;
-            background-color: #f2f2f2; /* Light gray background */
-            color: #333; /* Dark gray text color */
             position: relative;
         }
 
         #section1 {
-            background-color: #d9d9d9; /* Medium gray */
+            position: relative;
+            background-color: #d9d9d9;
+            overflow: hidden;
         }
 
         #section1 img {
             position: absolute;
             top: 0;
             right: 0;
-            width: 70%;
-            border-radius: 5px; /* Optional: add a border-radius to the image */
+            width: 100%; /* Make the image cover the entire section */
+            height: 100%; /* Ensure the image covers the full height */
+            object-fit: cover; /* Maintain image aspect ratio while covering */
+            border-radius: 5px;
         }
 
         #section1 .text-box {
@@ -84,15 +93,31 @@
             bottom: 0;
             left: 0;
             width: 30%;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.5); /* Half-transparent white */
             padding: 20px;
             color: #000;
         }
+
+        #section2,
+        #section3 {
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 20px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            width: calc(100% - 20px);
+        }
     </style>
 </head>
+
 <body>
 
     <nav>
+        <img src="your-profile-pic.jpg" alt="Your Profile Image" id="profile-pic">
         <ul>
             <li><a href="#section1">About me</a></li>
             <li><a href="#section2">Section 2</a></li>
@@ -126,4 +151,5 @@
     </section>
 
 </body>
+
 </html>
