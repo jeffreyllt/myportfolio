@@ -5,27 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
+    <link rel="icon" href="path/to/your-icon.png" type="image/png">
     <style>
         body {
             display: flex;
             flex-direction: column;
             margin: 0;
             color: #333;
-            font-family: 'Verdana', sans-serif; /* Set Verdana as the font family */
+            font-family: 'Verdana', sans-serif;
         }
 
         nav {
-            width: 20%;
+            width: 100%;
             background-color: #444;
             color: #fff;
             padding: 10px;
             box-sizing: border-box;
             position: fixed;
-            height: 100vh;
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             justify-content: flex-start;
         }
 
@@ -53,8 +53,7 @@
             background: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            width: calc(100% - 20px);
-            text-align: left;
+            text-align: center;
         }
 
         a:hover,
@@ -66,10 +65,9 @@
             flex: 1;
             padding: 20px;
             box-sizing: border-box;
-            margin-left: 20%;
-            min-height: 100vh;
-            overflow-y: auto;
+            margin-left: 0;
             position: relative;
+            border-bottom: 2px solid #fff;
         }
 
         #section1 {
@@ -82,9 +80,9 @@
             position: absolute;
             top: 0;
             right: 0;
-            width: 100%; /* Make the image cover the entire section */
-            height: 100%; /* Ensure the image covers the full height */
-            object-fit: cover; /* Maintain image aspect ratio while covering */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 5px;
         }
 
@@ -93,19 +91,15 @@
             bottom: 0;
             left: 0;
             width: 30%;
-            background-color: rgba(255, 255, 255, 0.5); /* Half-transparent white */
+            background-color: rgba(255, 255, 255, 0.5);
             padding: 20px;
             color: #000;
         }
 
-        #section2 {
+        #section2,
+        #section3 {
             background-color: #f2f2f2;
             color: #333;
-            padding: 20px;
-        }
-        #section3 {
-            background-color: #444;
-            color: #fff;
             padding: 20px;
         }
 
@@ -124,8 +118,8 @@
         <img src="icon.png" alt="Your Profile Image" id="profile-pic">
         <ul>
             <li><a href="#section1">About me</a></li>
-            <li><a href="#section2">Why Hire Me</a></li>
-            <li><a href="#section3">Contact Me</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
         </ul>
         <footer>
             <p>Jeffrey Lam @2024</p>
@@ -133,7 +127,7 @@
     </nav>
 
     <section id="section1">
-        <img src="home-pic.jpg" alt="Your Profile Image">
+        <img src="Aboutme.jpg" alt="Your Profile Image">
         <div class="text-box">
             <h2>About me</h2>
             <p>
