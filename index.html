@@ -16,7 +16,7 @@
         }
 
         nav {
-            width: 100%;
+            width: 20%;
             background-color: #444;
             color: #fff;
             padding: 10px;
@@ -24,12 +24,12 @@
             position: fixed;
             overflow-y: auto;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start; /* Align items to the start */
         }
 
         #profile-pic {
-            width: 40%;
+            width: 100%;
             margin-bottom: 20px;
         }
 
@@ -37,11 +37,12 @@
             list-style-type: none;
             padding: 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
         }
 
         li {
-            margin-right: 15px;
+            margin-bottom: 5px;
         }
 
         a {
@@ -53,7 +54,8 @@
             background: none;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            text-align: center;
+            width: calc(100% - 20px);
+            text-align: left;
         }
 
         a:hover,
@@ -65,13 +67,15 @@
             flex: 1;
             padding: 20px;
             box-sizing: border-box;
-            border-bottom: 2px solid #fff;
+            margin-left: 20%;
+            min-height: 100vh;
+            overflow-y: auto;
+            background-color: #f2f2f2;
+            color: #333;
         }
 
         #section1 {
-            position: relative;
             background-color: #d9d9d9;
-            overflow: hidden;
         }
 
         #section1 img {
@@ -84,7 +88,7 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
+            width: 30%;
             background-color: rgba(255, 255, 255, 0.5);
             padding: 20px;
             color: #000;
@@ -108,22 +112,25 @@
 
         @media only screen and (max-width: 768px) {
             nav {
-                flex-direction: column;
+                width: 100%;
                 align-items: center;
             }
 
             ul {
-                flex-direction: column;
+                align-items: center;
                 text-align: center;
             }
 
             li {
-                margin-right: 0;
                 margin-bottom: 5px;
             }
 
             #profile-pic {
                 width: 70%; /* Adjust the profile pic width for better visibility */
+            }
+
+            section {
+                margin-left: 0;
             }
         }
     </style>
