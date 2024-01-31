@@ -26,21 +26,21 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            height: 100vh;
-            justify-content: space-between; /* Added for proper spacing */
+            height: 100vh; /* Adjusted to 100% of the viewport height */
+            justify-content: space-between;
         }
 
         #profile-pic {
-            width: 30%; /* Updated to 30% */
-            max-height: 30vh; /* Added to limit height in vertical mode */
+            height: 20%; /* Updated to 20% */
             margin-bottom: 20px;
+            max-height: 20vh; /* Added to limit height in vertical mode */
         }
 
         ul {
             list-style-type: none;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Changed for left-to-right arrangement */
+            flex-direction: column;
             align-items: flex-start;
         }
 
@@ -52,13 +52,11 @@
             text-decoration: none;
             color: #fff;
             padding: 15px;
-            display: block;
-            border: none;
-            background: none;
+            display: flex; /* Updated to flex for alignment */
+            align-items: center; /* Aligning icon and text vertically */
             cursor: pointer;
             transition: background-color 0.3s ease;
-            text-align: left;
-            width: 100%; /* Full width for responsiveness */
+            width: 100%;
         }
 
         a:hover,
@@ -90,8 +88,8 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 70%; /* Adjusted width */
-            background-color: rgba(255, 255, 255, 0.8); /* Adjusted transparency */
+            width: 70%;
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             color: #000;
         }
@@ -110,6 +108,7 @@
             background-color: #444;
             color: #fff;
             text-align: center;
+            height: 40vh; /* Adjusted to 40% of the viewport height */
         }
 
         @media only screen and (max-width: 768px) {
@@ -120,18 +119,18 @@
             }
 
             ul {
-                flex-direction: row; /* Changed for left-to-right arrangement */
+                flex-direction: row;
                 justify-content: space-around;
-                width: 100%; /* Full width for responsiveness */
+                width: 100%;
             }
 
             li {
-                margin-bottom: 0; /* Removed margin-bottom for better alignment */
+                margin-bottom: 0;
             }
 
             #profile-pic {
-                width: 70%; /* Adjusted for better visibility */
-                max-height: none; /* Allowing full height */
+                width: 70%;
+                max-height: none;
             }
 
             section {
@@ -145,6 +144,7 @@
                 background-color: #444;
                 color: #fff;
                 text-align: center;
+                height: auto;
             }
         }
     </style>
@@ -159,9 +159,6 @@
             <li><a href="#section2">Section 2</a></li>
             <li><a href="#section3">Section 3</a></li>
         </ul>
-        <footer>
-            <p>Jeffrey Lam @2024</p>
-        </footer>
     </nav>
 
     <section id="section1">
@@ -176,16 +173,4 @@
         </div>
     </section>
 
-    <section id="section2">
-        <h2>Why Hire Me</h2>
-        <p>This is the content of section 2.</p>
-    </section>
-
-    <section id="section3">
-        <h2>Contact me</h2>
-        <p>This is the content of section 3.</p>
-    </section>
-
-</body>
-
-</html>
+    <section id="section
