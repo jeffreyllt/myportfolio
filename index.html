@@ -104,6 +104,18 @@
             padding: 20px;
         }
 
+        footer {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            background-color: #444;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            display: none;
+        }
+
         @media only screen and (max-width: 768px) {
             nav {
                 width: 100%;
@@ -131,6 +143,18 @@
 
             #section1 .text-box {
                 width: 100%;
+            }
+
+            footer {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 10px;
+                background-color: #444;
+                color: #fff;
+                text-align: center;
+                position: static;
+                display: block;
+                margin-top: 20px;
             }
         }
     </style>
@@ -168,6 +192,28 @@
         <h2>Contact me</h2>
         <p>This is the content of section 3.</p>
     </section>
+
+    <footer>
+        <p>Jeffrey Lam @2024</p>
+    </footer>
+
+    <script>
+        window.addEventListener("resize", function () {
+            if (window.innerWidth <= 768) {
+                document.querySelector("footer").style.display = "block";
+            } else {
+                document.querySelector("footer").style.display = "none";
+            }
+        });
+
+        window.addEventListener("load", function () {
+            if (window.innerWidth <= 768) {
+                document.querySelector("footer").style.display = "block";
+            } else {
+                document.querySelector("footer").style.display = "none";
+            }
+        });
+    </script>
 
 </body>
 
