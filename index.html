@@ -25,17 +25,17 @@
             overflow-y: auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
             height: 100vh;
-            justify-content: space-between;
             z-index: 1;
         }
 
         #profile-pic {
             height: 20%;
-            margin-bottom: 20px;
             max-height: 20vh;
             width: 100%;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -43,7 +43,7 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             width: 100%;
         }
 
@@ -60,6 +60,7 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
             width: 100%;
+            justify-content: center;
         }
 
         a:hover,
@@ -88,12 +89,10 @@
         }
 
         #section1 .text-box {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 70%;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            box-sizing: border-box;
             padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
             color: #000;
         }
 
@@ -118,7 +117,7 @@
         @media only screen and (max-width: 768px) {
             nav {
                 width: 100%;
-                align-items: center;
+                align-items: flex-start;
                 height: auto;
             }
 
