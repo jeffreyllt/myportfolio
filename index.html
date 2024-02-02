@@ -81,6 +81,7 @@
         #section1 {
             background-color: #d9d9d9;
             overflow: hidden;
+            position: relative;
         }
 
         #section1 img {
@@ -90,7 +91,10 @@
         }
 
         #section1 .text-box {
-            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;
             box-sizing: border-box;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -143,6 +147,7 @@
 
             #section1 .text-box {
                 width: 100%;
+                box-sizing: border-box;
             }
 
             footer {
@@ -155,6 +160,26 @@
                 position: static;
                 display: block;
                 margin-top: 20px;
+            }
+        }
+
+        @media only screen and (max-height: 768px) {
+            nav {
+                height: 20%;
+            }
+
+            footer {
+                height: 5%;
+                bottom: 0;
+            }
+
+            ul {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+
+            a {
+                padding: 10px;
             }
         }
     </style>
