@@ -1,22 +1,24 @@
-
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f2f2f2; /* Grey background */
+  overflow: hidden; /* Hide scroll bars */
 }
 
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 30%; /* 30% width in horizontal ratio */
-  height: 100vh; /* 100% height in vertical ratio */
+  width: 30vw; /* 30% width in horizontal ratio */
+  height: 100vh; /* Full height */
   background-color: #ccc; /* Grey background */
   overflow-y: auto;
+  z-index: 1;
 }
 
 .icon {
+  width: 30%; /* 30% of the sidebar width */
   position: absolute;
   top: 10px;
   right: 10px;
@@ -32,15 +34,19 @@ li {
 }
 
 .section {
+  width: calc(70vw - 2 * 20px); /* Width excluding sidebar and padding */
   padding: 20px;
   background-color: #fff; /* White background */
+  float: left; /* Arrange sections side by side */
+  overflow-y: auto; /* Enable vertical scrolling */
+  height: 100vh; /* Full height */
 }
 
 /* Media query for vertical ratio */
 @media (orientation: portrait) {
   .sidebar {
-    width: 100%; /* Full width in vertical ratio */
-    height: 15%; /* 15% height in vertical ratio */
+    width: 100vw; /* Full width in vertical ratio */
+    height: 15vh; /* 15% height in vertical ratio */
     overflow-x: auto;
     overflow-y: visible;
   }
