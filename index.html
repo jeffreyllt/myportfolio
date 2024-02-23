@@ -15,7 +15,7 @@
         }
 
         nav {
-            background-color: rgba(68, 68, 68, 1); /* Non-transparent background */
+            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
             padding: 10px 0;
             text-align: center;
             position: fixed;
@@ -23,8 +23,8 @@
             top: 0;
             width: 100%;
             z-index: 1000; /* Ensures nav stays on top */
-            display: flex;
-            justify-content: flex-start; /* Buttons on the left */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap; /* Prevent line breaks */
         }
 
         nav a {
@@ -41,7 +41,7 @@
 
         section img {
             width: 100%;
-            object-fit: cover; /* Ensures image covers the entire section */
+            height: auto;
         }
 
         .section-title {
@@ -60,6 +60,16 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden; /* Hide overflow to crop images */
+        }
+
+        .home-screen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .home-screen .text-box {
@@ -81,53 +91,45 @@
             font-size: 18px; /* Smaller font size for subtitle */
         }
 
-        .about-me-section {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            height: 50vh; /* Half of the screen height */
-        }
-
-        .about-me-section .bio-picture {
-            width: 50%; /* Half the width of the screen */
-            object-fit: cover;
-            height: auto; /* Maintain aspect ratio */
-        }
-
-        .about-me-section .bio-text {
-            width: 50%; /* Half the width of the screen */
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
+        .about-me-section,
         .experience-section,
         .contact-section {
             height: calc(100vh - 60px); /* Full screen height minus nav bar */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            position: relative;
+            overflow: hidden; /* Hide overflow to crop images */
         }
 
+        .about-me-section .bio-picture,
         .experience-section .section-image,
         .contact-section .section-image {
-            width: calc(100vw / 3); /* One-third of screen width */
-            height: calc(100vh - 60px); /* Full screen height minus nav bar */
+            width: 100%;
             object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
         }
 
-        .section-title {
+        .about-me-section .bio-text,
+        .experience-section .text-container,
+        .contact-section .text-container {
             position: absolute;
-            bottom: 20px;
-            left: 20px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
             color: #fff;
-            font-weight: bold;
-            font-size: 24px;
-            z-index: 100; /* Ensures text is above image */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .experience-section .text-container,
+        .contact-section .text-container {
+            bottom: 20px; /* Adjust position */
         }
 
         .footer {
-            background-color: rgba(51, 51, 51, 1); /* Non-transparent background */
+            background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -141,7 +143,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: rgba(68, 68, 68, 1); /* Non-transparent background */
+            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
             color: #fff;
             padding: 10px 20px;
             border: none;
@@ -157,23 +159,19 @@
 
             .about-me-section,
             .experience-section,
-          .contact-section {
+            .contact-section {
                 height: 100vh; /* Full screen height */
             }
 
-            .about-me-section .bio-picture {
-                width: 100%;
-                height: auto; /* Maintain aspect ratio */
-            }
-
-            .about-me-section .bio-text {
-                width: 100%;
-                padding: 20px; /* Adjust padding for better spacing */
-            }
-
+            .about-me-section .bio-picture,
             .experience-section .section-image,
             .contact-section .section-image {
-                width: 100%; /* Full width in mobile view */
+                height: 50vh; /* Half of the screen height */
+            }
+
+            .about-me-section .bio-text,
+            .experience-section .text-container,
+            .contact-section .text-container {
                 height: 50vh; /* Half of the screen height */
             }
         }
@@ -200,18 +198,18 @@
             <p>This is a brief description of myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor justo non tellus fermentum, nec posuere eros ultricies. Cras et lectus vel est ultricies tristique non ac ante. Donec tempus, neque id placerat tempus, mauris risus lacinia nisi, eget tempor lacus mauris quis urna. In id ultricies neque. Fusce tincidunt, velitid viverra consectetur, nibh purus lobortis nisl, sed dignissim nulla libero vitae lorem.</p>
         </div>
     </section>
-    <section id="experience" class="section experience-section">
+    <section id="experience" class="experience-section">
         <img src="surfblack.JPG" alt="Experience" class="section-image">
-        <div class="section-title">Experience</div>
         <div class="text-container">
+            <div class="section-title">Experience</div>
             <h2>Experience</h2>
             <p>Description of experience goes here.</p>
         </div>
     </section>
-    <section id="contact" class="section contact-section">
+    <section id="contact" class="contact-section">
         <img src="mansittingblack.JPG" alt="Contact" class="section-image">
-        <div class="section-title">Contact</div>
         <div class="text-container">
+            <div class="section-title">Contact</div>
             <h2>Contact</h2>
             <p>Contact information goes here.</p>
         </div>
