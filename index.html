@@ -13,7 +13,7 @@
             scroll-behavior: smooth; /* Smooth scrolling */
         }
         nav {
-            background-color: #444;
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
             padding: 10px 0;
             text-align: center;
             position: fixed;
@@ -34,28 +34,31 @@
             text-align: center;
             height: calc(100vh - 60px); /* Full height minus nav height */
             margin-top: 60px; /* Ensure section content is below nav */
+            position: relative; /* Required for positioning text within the section */
         }
         section img {
             width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures image covers the entire section */
         }
         .home-screen {
             position: relative;
-            background-image: url('maninseablack.JPG'); /* Replace with your image */
-            background-size: cover;
-            background-position: center;
             height: 100vh;
         }
         .home-screen .text-box {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            bottom: 20px; /* Adjust as needed */
+            left: 20px; /* Adjust as needed */
             color: #fff;
-            padding: 20px;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        .home-screen .text-box span {
+            display: block;
+            font-size: 36px; /* Larger font size for titles */
         }
         footer {
-            background-color: #333;
+            background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
             color: #fff;
             padding: 10px 0;
             text-align: center;
@@ -63,6 +66,7 @@
             bottom: -50px; /* Initially hides footer */
             width: 100%;
             transition: bottom 0.3s ease; /* Smooth transition */
+            z-index: 1000; /* Ensures footer stays on top */
         }
         footer.show {
             bottom: 0; /* Shows footer when scrolled to the bottom */
@@ -71,12 +75,13 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #444;
+            background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
             display: none; /* Initially hidden */
+            z-index: 1000; /* Ensures button stays on top */
         }
     </style>
 </head>
@@ -88,14 +93,20 @@
         <a href="#contact">Contact</a>
     </nav>
     <section id="home" class="home-screen">
+        <img src="home_background.jpg" alt="Home Background">
         <div class="text-box">
-            <h1>Jeffrey Lam</h1>
+            <span>Title of Your Portfolio</span>
+            <span>Subtitle or Slogan</span>
         </div>
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <img src="about_me.jpg" alt="About Me">
-        <p>This is a brief description of myself.</p>
+        <div class="bio-container">
+            <img src="mypicblack.JPG" alt="Bio Picture" class="bio-picture">
+            <div class="bio-text">
+                <p>This is a brief description of myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor justo non tellus fermentum, nec posuere eros ultricies. Cras et lectus vel est ultricies tristique non ac ante. Donec tempus, neque id placerat tempus, mauris risus lacinia nisi, eget tempor lacus mauris quis urna. In id ultricies neque. Fusce tincidunt, velit id viverra consectetur, nibh purus lobortis nisl, sed dignissim nulla libero vitae lorem.</p>
+            </div>
+        </div>
     </section>
     <section id="experience">
         <h2>Experience</h2>
