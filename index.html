@@ -37,10 +37,22 @@
             cursor: pointer;
         }
 
-        nav a {
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
         }
 
         section {
@@ -179,58 +191,56 @@
             }
 
             .menu-icon {
-                display: block; /* Display the menu icon */
-            }
+                display: block; /* Display the menu icon */       }
 
-            nav ul {
-                display: none; /* Initially hidden */
-                position: fixed;
-                top: 60px; /* Adjust position below the nav bar */
-                left: 0;
-                width: 100%;
-                background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
-                padding: 10px 0;
-                margin: 0;
-                text-align: center;
-            }
-
-            nav ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-
-            nav ul li a {
-                color: #fff;
-                text-decoration: none;
-            }
-
-            .footer {
-                display: none; /* Hide footer in sections other than contact */
-            }
-
-            .about-me-section,
-            .experience-section,
-            .contact-section {
-                height: calc(100vh - 60px); /* Full screen height minus nav bar */
-            }
-
-            .about-me-section .bio-picture {
-                width: 100%; /* Full width in mobile view */
-                height: 50vh; /* Half of the screen height */
-            }
-
-            .experience-section .section-image,
-            .contact-section .section-image {
-                height: 100vh; /* Full screen height */
-            }
-
-            .experience-section .text-container,
-            .contact-section .text-container {
-                height: calc(100vh - 60px); /* Full screen height minus nav bar */
-            }
+        nav ul {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 60px; /* Adjust position below the nav bar */
+            left: 0;
+            width: 100%;
+            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
+            padding: 10px 0;
+            margin: 0;
+            text-align: center;
         }
-    </style>
-</head>
+
+        nav ul li {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer {
+            display: none; /* Hide footer in sections other than contact */
+        }
+
+        .about-me-section,
+        .experience-section,
+        .contact-section {
+            height: calc(100vh - 60px); /* Full screen height minus nav bar */
+        }
+
+        .about-me-section .bio-picture {
+            width: 100%; /* Full width in mobile view */
+            height: 50vh; /* Half of the screen height */
+        }
+
+        .experience-section .section-image,
+        .contact-section .section-image {
+            height: 100vh; /* Full screen height */
+        }
+
+        .experience-section .text-container,
+        .contact-section .text-container {
+            height: calc(100vh - 60px); /* Full screen height minus nav bar */
+        }
+    }
+</style></head>
 <body>
     <nav>
         <div class="nav-container">
@@ -276,31 +286,28 @@
     <footer class="footer">
         <p>&copy; 2024 Jeffrey XP</p>
     </footer>
+<script>
+    // JavaScript code for showing footer when scrolled to the bottom
+    window.addEventListener('scroll', function() {
+        var footer = document.querySelector('.footer');
+        var windowHeight = window.innerHeight;
+        var bodyHeight = document.body.clientHeight;
+        var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
-    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
-
-    <script>
-        // JavaScript code for showing footer when scrolled to the bottom
-        window.addEventListener('scroll', function() {
-            var footer = document.querySelector('.footer');
-            var windowHeight = window.innerHeight;
-            var bodyHeight = document.body.clientHeight;
-            var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-
-            if (scrollPosition + windowHeight >= bodyHeight) {
-                footer.classList.add('show');
-            } else {
-                footer.classList.remove('show');
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        if (scrollPosition + windowHeight >= bodyHeight && scrollPosition > 0) {
+            footer.style.display = 'block';
+        } else {
+            footer.style.display = 'none';
         }
-    </script>
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
 </body>
 </html>
 
