@@ -23,8 +23,18 @@
             top: 0;
             width: 100%;
             z-index: 1000; /* Ensures nav stays on top */
-            overflow-x: auto; /* Enable horizontal scrolling */
-            white-space: nowrap; /* Prevent line breaks */
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .menu-icon {
+            display: none; /* Initially hidden */
+            cursor: pointer;
         }
 
         nav a {
@@ -94,7 +104,6 @@
         .about-me-section,
         .experience-section,
         .contact-section {
-            height: calc(100vh - 60px); /* Full screen height minus nav bar */
             position: relative;
             overflow: hidden; /* Hide overflow to crop images */
         }
@@ -103,11 +112,22 @@
         .experience-section .section-image,
         .contact-section .section-image {
             width: 100%;
-            object-fit: cover;
+            height: auto;
             position: absolute;
+        }
+
+        .about-me-section .bio-picture {
+            width: 50%; /* Half the width of the screen */
+            left: 0;
+            top: 0;
+        }
+
+        .experience-section .section-image,
+        .contact-section .section-image {
+            width: 100%;
+            height: calc(100vh / 3); /* One-third of the screen height */
             top: 0;
             left: 0;
-            z-index: -1;
         }
 
         .about-me-section .bio-text,
@@ -125,7 +145,8 @@
 
         .experience-section .text-container,
         .contact-section .text-container {
-            bottom: 20px; /* Adjust position */
+            height: calc(2 * (100vh / 3)); /* Two-thirds of the screen height */
+            bottom: 0;
         }
 
         .footer {
@@ -133,56 +154,94 @@
             color: #fff;
             padding: 10px 0;
             text-align: center;
-            position: fixed;
+            position: absolute;
             bottom: 0;
             width: 100%;
             z-index: 1000; /* Ensures footer stays on top */
+            display: none; /* Initially hidden */
         }
 
         .back-to-top {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
+            background-color: red; /* Red background color */
             color: #fff;
             padding: 10px 20px;
             border: none;
             cursor: pointer;
-            display: none; /* Initially hidden */
             z-index: 1000; /* Ensures button stays on top */
         }
 
         @media screen and (max-width: 768px) {
-            nav a[href="#home"] {
-                display: none; /* Hide Home link in mobile view */
+            .nav-container {
+                justify-content: flex-end;
+            }
+
+            .menu-icon {
+                display: block; /* Display the menu icon */
+            }
+
+            nav ul {
+                display: none; /* Initially hidden */
+                position: fixed;
+                top: 60px; /* Adjust position below the nav bar */
+                left: 0;
+                width: 100%;
+                background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
+                padding: 10px 0;
+                margin: 0;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+            .footer {
+                display: none; /* Hide footer in sections other than contact */
             }
 
             .about-me-section,
             .experience-section,
             .contact-section {
+                height: calc(100vh - 60px); /* Full screen height minus nav bar */
+            }
+
+            .about-me-section .bio-picture {
+                width: 100%; /* Full width in mobile view */
+                height: 50vh; /* Half of the screen height */
+            }
+
+            .experience-section .section-image,
+            .contact-section .section-image {
                 height: 100vh; /* Full screen height */
             }
 
-            .about-me-section .bio-picture,
-            .experience-section .section-image,
-            .contact-section .section-image {
-                height: 50vh; /* Half of the screen height */
-            }
-
-            .about-me-section .bio-text,
             .experience-section .text-container,
             .contact-section .text-container {
-                height: 50vh; /* Half of the screen height */
+                height: calc(100vh - 60px); /* Full screen height minus nav bar */
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-container">
+            <div class="menu-icon">&#9776;</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
     <section id="home" class="home-screen">
         <img src="maninseablack.JPG" alt="Home Background">
