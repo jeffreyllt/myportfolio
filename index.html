@@ -7,7 +7,7 @@
     <style>
         /* CSS styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: Verdana, sans-serif; /* Change font to Verdana */
             margin: 0;
             padding: 0;
             scroll-behavior: smooth; /* Smooth scrolling */
@@ -32,13 +32,11 @@
         section {
             padding: 50px;
             text-align: center;
-            height: calc(100vh - 60px); /* Full height minus nav height */
             margin-top: 60px; /* Ensure section content is below nav */
-            position: relative; /* Required for positioning text within the section */
         }
         section img {
             width: 100%;
-            height: 100%;
+            height: calc(100vh - 60px); /* Full height minus nav height */
             object-fit: cover; /* Ensures image covers the entire section */
         }
         .home-screen {
@@ -52,10 +50,23 @@
             color: #fff;
             font-weight: bold;
             font-size: 24px;
+            z-index: 100; /* Ensures text is above image */
         }
         .home-screen .text-box span {
             display: block;
             font-size: 36px; /* Larger font size for titles */
+        }
+        .contact-section img, .experience-section img {
+            position: relative;
+        }
+        .contact-section .section-title, .experience-section .section-title {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+            z-index: 100; /* Ensures text is above image */
         }
         footer {
             background-color: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
@@ -93,10 +104,10 @@
         <a href="#contact">Contact</a>
     </nav>
     <section id="home" class="home-screen">
-        <img src="home_background.jpg" alt="Home Background">
+        <img src="maninseablack.JPG" alt="Home Background">
         <div class="text-box">
-            <span>Title of Your Portfolio</span>
-            <span>Subtitle or Slogan</span>
+            <span>JEFFREY LAM</span>
+            <span>Web Developer & Data Analyst</span>
         </div>
     </section>
     <section id="about">
@@ -104,18 +115,18 @@
         <div class="bio-container">
             <img src="mypicblack.JPG" alt="Bio Picture" class="bio-picture">
             <div class="bio-text">
-                <p>This is a brief description of myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor justo non tellus fermentum, nec posuere eros ultricies. Cras et lectus vel est ultricies tristique non ac ante. Donec tempus, neque id placerat tempus, mauris risus lacinia nisi, eget tempor lacus mauris quis urna. In id ultricies neque. Fusce tincidunt, velit id viverra consectetur, nibh purus lobortis nisl, sed dignissim nulla libero vitae lorem.</p>
+                <p>This is a brief description of myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor justo non tellus fermentum, nec posuere eros ultricies. Cras et lectus vel est ultricies tristique non ac ante. Donec tempus, neque id placerat tempus, mauris risus lacinia nisi, eget tempor lacus mauris quis urna. In idultricies neque. Fusce tincidunt, velit id viverra consectetur, nibh purus lobortis nisl, sed dignissim nulla libero vitae lorem.</p>
             </div>
         </div>
     </section>
-    <section id="experience">
-        <h2>Experience</h2>
+    <section id="experience" class="experience-section">
         <img src="surfblack.JPG" alt="Experience">
+        <div class="section-title">Experience</div>
         <p>This is my experience in a nutshell.</p>
     </section>
-    <section id="contact">
-        <h2>Contact</h2>
+    <section id="contact" class="contact-section">
         <img src="mansittingblack.JPG" alt="Contact">
+        <div class="section-title">Contact</div>
         <p>You can reach me at example@example.com.</p>
     </section>
     <footer id="footer">
@@ -157,3 +168,4 @@
     </script>
 </body>
 </html>
+
