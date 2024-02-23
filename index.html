@@ -3,244 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JEFFREY'S PORTFOLIO</title>
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="icon.png">
     <style>
-        /* CSS styles */
-        body {
-            font-family: Verdana, sans-serif; /* Change font to Verdana */
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth; /* Smooth scrolling */
-        }
-
-        nav {
-            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            z-index: 1000; /* Ensures nav stays on top */
-        }
-
+        /* Add custom styles here */
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 20px;
+            padding: 10px 20px;
+            background-color: #333; /* Dark background color */
+            color: #fff; /* Text color */
         }
 
         .menu-icon {
-            display: none; /* Initially hidden */
-            cursor: pointer;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        section {
-            text-align: center;
-            position: relative;
-            overflow: hidden; /* Hide overflow to crop images */
-        }
-
-        section img {
-            width: 100%;
-            height: auto;
-        }
-
-        .section-title {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            color: #fff;
-            font-weight: bold;
             font-size: 24px;
-            z-index: 100; /* Ensures text is above image */
-        }
-
-        .home-screen {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            overflow: hidden; /* Hide overflow to crop images */
-        }
-
-        .home-screen img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .home-screen .text-box {
-            position: absolute;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            z-index: 100; /* Ensures text is above image */
-            text-align: center;
-        }
-
-        .home-screen .text-box h1 {
-            font-size: 36px; /* Larger font size for title */
-            margin-bottom: 10px;
-        }
-
-        .home-screen .text-box span {
-            font-size: 18px; /* Smaller font size for subtitle */
-        }
-
-        .about-me-section,
-        .experience-section,
-        .contact-section {
-            position: relative;
-            overflow: hidden; /* Hide overflow to crop images */
-        }
-
-        .about-me-section .bio-picture,
-        .experience-section .section-image,
-        .contact-section .section-image {
-            width: 100%;
-            height: auto;
-            position: absolute;
-        }
-
-        .about-me-section .bio-picture {
-            width: 50%; /* Half the width of the screen */
-            left: 0;
-            top: 0;
-        }
-
-        .experience-section .section-image,
-        .contact-section .section-image {
-            width: 100%;
-            height: calc(100vh / 3); /* One-third of the screen height */
-            top: 0;
-            left: 0;
-        }
-
-        .about-me-section .bio-text,
-        .experience-section .text-container,
-        .contact-section .text-container {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            color: #fff;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .experience-section .text-container,
-        .contact-section .text-container {
-            height: calc(2 * (100vh / 3)); /* Two-thirds of the screen height */
-            bottom: 0;
-        }
-
-        .footer {
-            background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent background */
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000; /* Ensures footer stays on top */
-            display: none; /* Initially hidden */
-        }
-
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: red; /* Red background color */
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
             cursor: pointer;
-            z-index: 1000; /* Ensures button stays on top */
         }
 
-        @media screen and (max-width: 768px) {
-            .nav-container {
-                justify-content: flex-end;
-            }
-
-            .menu-icon {
-                display: block; /* Display the menu icon */       }
-
-        nav ul {
-            display: none; /* Initially hidden */
-            position: fixed;
-            top: 60px; /* Adjust position below the nav bar */
-            left: 0;
-            width: 100%;
-            background-color: rgba(68, 68, 68, 0.5); /* Semi-transparent background */
-            padding: 10px 0;
+        ul {
+            list-style-type: none;
+            padding: 0;
             margin: 0;
-            text-align: center;
+            display: flex;
         }
 
-        nav ul li {
-            display: block;
-            margin-bottom: 10px;
+        li {
+            margin-right: 20px;
         }
 
-        nav ul li a {
-            color: #fff;
+        a {
             text-decoration: none;
+            color: #fff; /* Text color */
         }
 
-        .footer {
-            display: none; /* Hide footer in sections other than contact */
+        /* Hides the menu on larger screens */
+        @media screen and (min-width: 768px) {
+            .menu-icon {
+                display: none;
+            }
         }
-
-        .about-me-section,
-        .experience-section,
-        .contact-section {
-            height: calc(100vh - 60px); /* Full screen height minus nav bar */
-        }
-
-        .about-me-section .bio-picture {
-            width: 100%; /* Full width in mobile view */
-            height: 50vh; /* Half of the screen height */
-        }
-
-        .experience-section .section-image,
-        .contact-section .section-image {
-            height: 100vh; /* Full screen height */
-        }
-
-        .experience-section .text-container,
-        .contact-section .text-container {
-            height: calc(100vh - 60px); /* Full screen height minus nav bar */
-        }
-    }
-</style></head>
+    </style>
+</head>
 <body>
     <nav>
         <div class="nav-container">
@@ -253,61 +58,56 @@
             </ul>
         </div>
     </nav>
-    <section id="home" class="home-screen">
-        <img src="maninseablack.JPG" alt="Home Background">
-        <div class="text-box">
-            <h1>JEFFREY LAM</h1>
-            <span>Web Developer & Data Analyst</span>
+    <section id="home" class="home-section">
+        <div class="section-content">
+            <div class="background-image">
+                <img src="maninseablack.JPG" alt="Home Background">
+            </div>
+            <div class="text-box">
+                <h1>Welcome to My Website</h1>
+                <p>This is the home section.</p>
+            </div>
         </div>
     </section>
-    <section id="about" class="about-me-section">
-        <img src="mypicblack.JPG" alt="Bio Picture" class="bio-picture">
-        <div class="bio-text">
-            <h2>About Me</h2>
-            <p>This is a brief description of myself. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla auctor justo non tellus fermentum, nec posuere eros ultricies. Cras et lectus vel est ultricies tristique non ac ante. Donec tempus, neque id placerat tempus, mauris risus lacinia nisi, eget tempor lacus mauris quis urna. In id ultricies neque. Fusce tincidunt, velitid viverra consectetur, nibh purus lobortis nisl, sed dignissim nulla libero vitae lorem.</p>
+    <section id="about" class="about-section">
+        <div class="section-content">
+            <div class="bio-picture">
+                <img src="mypicblack.JPG" alt="Bio Picture">
+            </div>
+            <div class="bio-text">
+                <h2>About Me</h2>
+                <p>This is the about me section.</p>
+            </div>
         </div>
     </section>
     <section id="experience" class="experience-section">
-        <img src="surfblack.JPG" alt="Experience" class="section-image">
-        <div class="text-container">
-            <div class="section-title">Experience</div>
-            <h2>Experience</h2>
-            <p>Description of experience goes here.</p>
+        <div class="section-content">
+            <div class="experience-text">
+                <h2>Experience</h2>
+                <p>This is the experience section.</p>
+            </div>
         </div>
     </section>
     <section id="contact" class="contact-section">
-        <img src="mansittingblack.JPG" alt="Contact" class="section-image">
-        <div class="text-container">
-            <div class="section-title">Contact</div>
-            <h2>Contact</h2>
-            <p>Contact information goes here.</p>
+        <div class="section-content">
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p>This is the contact section.</p>
+            </div>
         </div>
     </section>
     <footer class="footer">
-        <p>&copy; 2024 Jeffrey XP</p>
+        <p>&copy; 2024 Your Name</p>
     </footer>
-<script>
-    // JavaScript code for showing footer when scrolled to the bottom
-    window.addEventListener('scroll', function() {
-        var footer = document.querySelector('.footer');
-        var windowHeight = window.innerHeight;
-        var bodyHeight = document.body.clientHeight;
-        var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    <script>
+        // JavaScript code goes here
+        const menuIcon = document.querySelector('.menu-icon');
+        const navList = document.querySelector('nav ul');
 
-        if (scrollPosition + windowHeight >= bodyHeight && scrollPosition > 0) {
-            footer.style.display = 'block';
-        } else {
-            footer.style.display = 'none';
-        }
-    });
-
-    function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        menuIcon.addEventListener('click', () => {
+            navList.classList.toggle('active');
         });
-    }
-</script>
+    </script>
 </body>
 </html>
-
