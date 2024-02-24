@@ -9,6 +9,8 @@
             font-family: 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
         .container {
@@ -18,49 +20,68 @@
         }
 
         header {
-            background-color: #f8f8f8;
+            background-color: transparent;
             padding: 20px 0;
         }
 
         header h1 {
             color: #000;
             font-weight: bold;
+            font-size: 24px;
         }
 
         header nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
+            text-align: right;
         }
 
         header nav ul li {
             display: inline;
-            margin-right: 20px;
+            margin-left: 20px;
         }
 
         header nav ul li a {
-            color: #0070c9;
+            color: #666;
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #000;
         }
 
         #hero {
-            background-color: #f4f4f4;
-            padding: 100px 0;
+            background-image: url('https://via.placeholder.com/1500x600');
+            background-size: cover;
+            background-position: center;
+            padding: 200px 0;
             text-align: center;
+            color: #fff;
         }
 
         #hero h2 {
+            font-size: 48px;
             margin-bottom: 20px;
-            color: #000;
+        }
+
+        #hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
         }
 
         .btn {
             background-color: #0070c9;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 30px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
             transition: background-color 0.3s ease;
         }
 
@@ -69,10 +90,14 @@
         }
 
         footer {
-            background-color: #f8f8f8;
-            color: #000;
+            background-color: #000;
+            color: #fff;
             text-align: center;
             padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 14px;
         }
     </style>
 </head>
