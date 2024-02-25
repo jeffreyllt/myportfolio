@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            transition: background-color 0.3s ease;
         }
 
         .container {
@@ -20,25 +21,28 @@
         }
 
         header {
-            background-color: #fff;
+            background-color: transparent;
             padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             z-index: 1000;
+            transition: background-color 0.3s ease;
         }
 
         header h1 {
-            color: #000;
+            color: #fff;
             font-weight: bold;
             font-size: 24px;
+        }
+
+        header nav {
+            float: right;
         }
 
         header nav ul {
             list-style: none;
             margin: 0;
             padding: 0;
-            text-align: right;
         }
 
         header nav ul li {
@@ -47,7 +51,7 @@
         }
 
         header nav ul li a {
-            color: #666;
+            color: #fff;
             text-decoration: none;
             font-weight: bold;
             font-size: 16px;
@@ -56,86 +60,152 @@
         }
 
         header nav ul li a:hover {
-            color: #000;
+            color: #ddd;
         }
 
-        #hero {
-            background-image: url('https://via.placeholder.com/1500x600');
-            background-size: cover;
-            background-position: center;
-            padding: 300px 0;
-            text-align: center;
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        #menu-toggle:checked + .menu-icon {
             color: #fff;
-            margin-top: 100px; /* Adjusted to account for the fixed header */
         }
 
-        #hero h2 {
-            font-size: 48px;
+        #menu-toggle {
+            display: none;
+        }
+
+        #menu {
+            clear: both;
+            display: none;
+        }
+
+        #menu-toggle:checked ~ #menu {
+            display: block;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 60px;
+            width: 100%;
+            text-align: center;
+            z-index: 999;
+        }
+
+        #menu ul {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+        }
+
+        #menu ul li {
+            display: block;
+            padding: 15px 0;
+        }
+
+        #menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        #menu ul li a:hover {
+            color: #ddd;
+        }
+
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 36px;
             margin-bottom: 20px;
         }
 
-        #hero p {
+        section p {
             font-size: 18px;
             margin-bottom: 40px;
-        }
-
-        .btn {
-            background-color: #0070c9;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 18px;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #005ba8;
+            color: #666;
         }
 
         footer {
-            background-color: #f9f9f9;
-            color: #666;
+            background-color: #000;
+            color: #fff;
             text-align: center;
             padding: 20px 0;
             position: relative;
-            margin-top: 300px; /* Adjusted to create space at the bottom */
+            margin-top: 100px;
+            transition: background-color 0.3s ease;
         }
 
         footer p {
             font-size: 14px;
+        }
+
+        @media screen and (max-width: 768px) {
+            header nav {
+                display: none;
+            }
+
+            .menu-icon {
+                display: inline-block;
+            }
+
+            #menu-toggle:checked ~ #menu {
+                display: block;
+            }
+
+            section {
+                padding-top: 180px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">&#9776;</label>
             <h1>Your Website Name</h1>
-            <nav>
+            <nav id="menu">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
+    <section id="home">
         <div class="container">
             <h2>Welcome to Your Website</h2>
-            <p>This is a brief description of your website or what you offer.</p>
-            <a href="#" class="btn">Learn More</a>
+            <p>This is the Home section where you can introduce yourself or your website.</p>
         </div>
     </section>
 
     <section id="about">
         <div class="container">
-            <h2>About Us</h2>
-            <p>This is where you can write about your company or yourself.</p>
+            <h2>About Me</h2>
+            <p>This is where you can write about yourself, your skills, or your interests.</p>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <p>This is where you can showcase your professional experience or achievements.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>This is where visitors can get in touch with you. You can provide a contact form or your contact information.</p>
         </div>
     </section>
 
