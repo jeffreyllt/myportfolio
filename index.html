@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Screen Sections with Nav and Footer</title>
+    <title>TEST</title>
     <style>
         /* Apply styles to make each section take up full screen */
         body, html {
@@ -94,15 +94,28 @@
             padding-bottom: 50px; /* Adjust for the footer height */
             overflow: hidden; /* Hide content behind nav and footer */
         }
+        
         #container1 {
             height: 100%;
-            width: 33.33%; /* 1/3 width */
+            width: 100%; /* 1/3 width */
             background-color: #1abc9c; /* Turquoise */
         }
 
         #container2 {
             height: 100%;
+            width: 33.33%; /* 2/3 width */
+            background-color: #e74c3c; /* Red */
+        }
+
+        #container3 {
+            height: 100%;
             width: 66.66%; /* 2/3 width */
+            background-color: #e74c3c; /* Red */
+        }
+
+        #container4 {
+            height: 33.33%;
+            width: 100%; /* 2/3 width */
             background-color: #e74c3c; /* Red */
         }
 
@@ -149,12 +162,16 @@
             <li><a href="#section4">Section 4</a></li>
         </ul>
     </nav>
-    <section id="section1">Section 1</section>
-    <section id="section2">
+    <section id="section1">
         <div id="container1">Container 1</div>
-        <div id="container2">Container 2</div>
     </section>
-    <section id="section3">Section 3</section>
+    <section id="section2">
+        <div id="container2">Container 2</div>
+        <div id="container3">Container 3</div>
+    </section>
+    <section id="section3">
+        <div id="container3">Container 3</div>
+    </section>
     <section id="section4">Section 4</section>
     <footer>
         <p>Footer</p>
