@@ -21,6 +21,7 @@
             position: fixed;
             top: 0;
             width: 100%;
+            z-index: 9999; /* Ensure nav is above everything */
         }
 
         footer {
@@ -31,10 +32,11 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            z-index: 9999; /* Ensure footer is above everything */
         }
 
         section {
-            height: 100%;
+            height: calc(100% - 50px); /* Subtract height of nav */
             width: 100%;
             display: flex;
             justify-content: center;
@@ -42,6 +44,7 @@
             font-size: 2em;
             position: relative;
             padding-bottom: 50px; /* Adjust for the footer height */
+            overflow: hidden; /* Hide content behind nav and footer */
         }
 
         /* Add unique styles to each section */
