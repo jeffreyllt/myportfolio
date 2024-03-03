@@ -4,17 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template</title>
+    <link rel="icon" href="icon.png">
+
     <style>
         /* Apply styles to make each section take up full screen */
         body, html {
             margin: 0;
             padding: 0;
+            margin-right: calc(100vw - 100%);
             height: 100%;
             overflow-x: hidden;
+            overflow: auto;
+            body::-webkit-scrollbar {
+                display: none;
+            }
         }
+
+        .element {
+    width: calc(100vw - (100vw - 100%)); /* Subtract scrollbar width from viewport width */
+}
+
 
         /* Add unique styles to each section */
         .section {
+            margin-top: auto;
             position: relative;
             width: 100%;
             display: flex;
@@ -22,7 +35,6 @@
             align-items: center;
             font-size: 2em;
             color: #fff;
-            padding-top: 10vh; /* Add padding to account for navbar height */
             box-sizing: border-box; /* Ensure padding doesn't affect overall height */
         }
 
@@ -30,11 +42,13 @@
         #section1 {
             background-color: #f1c40f; /* Yellow */
             height: 100vh; /* Full height */
+            padding-top: 6vh; /* Add padding to account for navbar height */
+            padding-right: 15px;
         }
 
         /* Container inside Section 1 */
-        #section1 .container {
-            width: 50vw;
+        #section1 .container1 {
+            width: 100vw;
             height: 100%;
             background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
             position: absolute;
@@ -45,94 +59,219 @@
             align-items: center;
         }
 
-        /* Section 2 */
+        /* Sections 2, 3, 4 */
         #section2 {
-            background-color: #3498db; /* Blue */
-            height: 92vh; /* Full height */
+            height: 100vh; /* Full height */
+            padding-top: 6vh; /* Add padding to account for navbar height */
+            padding-right: 15px;
         }
 
-        /* Section 3 */
-        #section3 {
-            background-color: #e74c3c; /* Red */
-            height: 92vh; /* Full height */
-        }
-
-        /* Section 4 */
-        #section4 {
-            background-color: #2ecc71; /* Green */
-            height: 92vh; /* Full height */
-            position: relative;
-        }
-
-        /* Footer */
-        .footer {
-            position: absolute;
-            bottom: 0;
+        #section2 .container1 {
             width: 100%;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            height: 8vh; /* Set height of footer */
+            height: 20vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
+        #section2 .container2 {
+            width: 50%;
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 20%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section2 .container3 {
+            width: 50%;
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 20%;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section3 {
+            height: 100vh; /* Full height */
+            padding-top: 6vh; /* Add padding to account for navbar height */
+            padding-right: 15px;
+        }
+
+        #section3 .container1 {
+            width: 100vw;
+            height: 40vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section3 .container2 {
+            width: 100vw;
+            height: 30vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 40%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #section3 .container3 {
+            width: 100vw;
+            height: 30vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 70%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        #section4 {
+            height: 100vh; /* Full height */
+            padding-top: 6vh; /* Add padding to account for navbar height */
+            padding-right: 15px;
+        }
+
+        #section4 .container1 {
+            width: 100vw;
+            height: 20vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section4 .container2 {
+            width: 100vw;
+            height: 70vh;
+            background-color: rgba(255, 255, 255, 0.3); /* Transparent white */
+            position: absolute;
+            top: 20%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #section4 .footer {
+            width: 100vw;
+            height: 10vh;
+            background-color: rgb(0, 0, 0); /* Transparent white */
+            position: absolute;
+            top: 90%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .responsive {
+  max-width: 100%;
+  height: auto;
+}
 
         /* Responsive Navigation Bar */
         .navbar {
-            background-color: #333;
-            overflow: hidden;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 999; /* Ensure it stays on top */
-            height: 8vh; /* Set height of navbar */
-        }
+    background-color: #33333383;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensure it stays on top */
+    height: 6vh; /* Set height of navbar */
+    padding-right: 15px;
+}
 
-        .navbar a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 2vh 3vw;
-            text-decoration: none;
-            transition: background-color 0.3s ease; /* Smooth transition for background color change */
-        }
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 0.5vh 1vw; /* Adjust padding to fit the navbar height */
+    text-decoration: none;
+    line-height: 6vh; /* Set line height to match navbar height */
+}
+
 
         .navbar a:hover {
             background-color: #ddd;
             color: black;
         }
 
-        .navbar a.active {
-            background-color: #e74c3c; /* Red */
-            color: white;
-        }
-
         .navbar .icon {
-            display: none; /* Hide the hamburger icon initially */
+            display: none;
+             /* Hide the hamburger icon initially */
         }
 
         @media screen and (max-width: 600px) {
             .navbar a:not(:first-child) {
                 display: none;
+                
             }
             .navbar a.icon {
                 float: right;
                 display: block;
-            }
+                            }
+
             .navbar.responsive a {
                 float: none;
                 display: block;
                 text-align: left;
-            }
-            .navbar.responsive .icon {
-                position: absolute;
-                right: 0;
-                top: 0;
-            }
+                padding: 3vw;
+                width: 100%;
 
+            }
             /* Ensure the navbar has enough height to show all links when expanded */
             .navbar.responsive {
                 height: auto;
+            }
+        }
+
+        /* Hamburger menu icon */
+        .icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Expandable down button */
+        .down-button {
+            display: none;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Show down button on small screens */
+        @media screen and (max-width: 600px) {
+            .icon {
+                display: block;
+            }
+            .down-button {
+                display: block;
             }
         }
     </style>
@@ -153,19 +292,55 @@
 <!-- Sections -->
 <div id="section1" class="section">
     <!-- Container inside Section 1 -->
-    <div class="container">
-        Section 1 Content
+    <div class="container1">
+        <img src="maninseablack.JPG" alt="HOME" class="responsive">
     </div>
 </div>
-<div id="section2" class="section">Section 2</div>
-<div id="section3" class="section">Section 3</div>
-<div id="section4" class="section">
-    Section 4
-    <!-- Footer -->
-    <div class="footer">Footer</div>
+
+<div id="section2" class="section" style="background-color: #3498db;">
+    <div class="container1">
+        <img src="cliffblack.JPG" alt="Section2" class="responsive">
+    </div>
+    <div class="container2">
+        Section 2b Content
+    </div>
+    <div class="container3">
+        Section 2b Content
+    </div>
 </div>
 
-<!-- JavaScript for toggling responsive navbar, updating active state, and scrolling to sections -->
+<div id="section3" class="section" style="background-color: #e74c3c;">
+    <div class="container1">
+        <img src="mansittingblack.JPG" alt="Section3" class="responsive">
+    </div>
+    <div class="container2">
+        Section 3b Content
+    </div>
+    <div class="container3">
+        Section 3b Content
+    </div>
+</div>
+
+<div id="section4" class="section" style="background-color: #2ecc71;">
+    <div class="container1">
+        <img src="nature.jpg" alt="Section4" class="responsive">
+    </div>
+    <div class="container2">
+        contact
+    </div>
+    <div class="footer">
+        footer
+    </div>
+</div>
+
+<!-- Footer container at the bottom of Section 4 -->
+<div class="section" style="background-color: #2ecc71;">
+    <div class="container">
+        <span class="down-button" onclick="scrollToSection('section2')">↓</span>
+    </div>
+</div>
+
+<!-- JavaScript for scrolling to sections -->
 <script>
     function scrollToSection(sectionId) {
         var navbarHeight = document.querySelector('.navbar').offsetHeight;
@@ -177,6 +352,7 @@
         });
     }
 
+    // Function to toggle responsive navbar
     function toggleNavbar() {
         var x = document.getElementById("myNavbar");
         if (x.classList.contains("responsive")) {
